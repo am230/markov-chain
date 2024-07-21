@@ -56,9 +56,6 @@ class MarkovChain[T]:
         current_entry = start_entry
         iteration_count = 0
         while iteration_count < max_iteration:
-            if current_entry not in self.probability_matrix:
-                parts.append(current_entry)
-                break
             translations = self.probability_matrix[current_entry]
             current_entry, *_ = random.choices(
                 population=tuple(translations.keys()),
@@ -66,5 +63,7 @@ class MarkovChain[T]:
                 k=1,
             )
             parts.append(current_entry)
+            if current_entry not in self.probability_matrix:
+                break
             iteration_count += 1
         return parts
