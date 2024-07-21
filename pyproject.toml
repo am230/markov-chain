@@ -3,7 +3,7 @@ name = "markov-chain"
 version = "0.1.0"
 description = "Add your description here"
 authors = [
-    { name = "2.30am", email = "111672334+am230@users.noreply.github.com" }
+    { name = "2.30am", email = "111672334+am230@users.noreply.github.com" },
 ]
 dependencies = []
 readme = "README.md"
@@ -15,7 +15,7 @@ build-backend = "hatchling.build"
 
 [tool.rye]
 managed = true
-dev-dependencies = []
+dev-dependencies = ["pytest>=8.3.1"]
 
 [tool.hatch.metadata]
 allow-direct-references = true
